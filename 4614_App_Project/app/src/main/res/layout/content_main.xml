@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.charlie.a4614app.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EnterNum"
+        android:hint="Enter a Number"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView"
+        android:inputType="phone|number" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to"
+        android:id="@+id/textView"
+        android:textSize="25dp"
+        android:layout_alignBottom="@+id/EnterNum"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Message"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/EnterNum"
+        android:hint="Enter Message"
+        android:textSize="25dp"
+        android:inputType="text"
+        android:layout_toStartOf="@+id/Send"
+        android:textStyle="normal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:id="@+id/Send"
+        android:layout_alignTop="@+id/Message"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

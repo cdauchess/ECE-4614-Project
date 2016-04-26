@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">4614 App</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="Title">ECE 4614</string>
+    <string name="Authors">Charlie Dauchess\nWoojae Kim</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="to">To:</string>
+</resources>
