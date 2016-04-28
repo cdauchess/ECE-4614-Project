@@ -12,4 +12,110 @@
     tools:context="com.example.charlie.a4614app.MacroSettings"
     tools:showIn="@layout/activity_macro_settings">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Macro1Name"
+        android:textSize="25dp"
+        android:password="false"
+        android:maxLength="15"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/Macro1Label"
+        android:hint="Enter A Name"
+        android:layout_alignBaseline="@+id/Macro1Label" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Macro 1:"
+        android:id="@+id/Macro1Label"
+        android:textIsSelectable="true"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/abc_search_url_text_selected" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Macro 2:"
+        android:id="@+id/Macro2Label"
+        android:textIsSelectable="true"
+        android:textSize="25dp"
+        android:layout_marginTop="126dp"
+        android:layout_below="@+id/Macro1Name"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/abc_search_url_text_selected" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Macro2Name"
+        android:textSize="25dp"
+        android:password="false"
+        android:maxLength="15"
+        android:hint="Enter A Name"
+        android:layout_toEndOf="@+id/Macro2Label"
+        android:layout_alignBaseline="@+id/Macro2Label" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Macro3Name"
+        android:textSize="25dp"
+        android:password="false"
+        android:maxLength="15"
+        android:hint="Enter A Name"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/Macro3Label"
+        android:layout_alignBaseline="@+id/Macro3Label" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Macro 3:"
+        android:id="@+id/Macro3Label"
+        android:textIsSelectable="true"
+        android:textSize="25dp"
+        android:layout_marginTop="115dp"
+        android:layout_below="@+id/Macro2Name"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/abc_search_url_text_selected" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Macro1Txt"
+        android:layout_below="@+id/Macro1Name"
+        android:layout_alignParentStart="true"
+        android:hint="Enter Macro Text"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Macro2Txt"
+        android:hint="Enter Macro Text"
+        android:textSize="25dp"
+        android:layout_below="@+id/Macro2Name"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Macro3Txt"
+        android:hint="Enter Macro Text"
+        android:textSize="25dp"
+        android:layout_below="@+id/Macro3Name"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Macros"
+        android:id="@+id/SaveMacroBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="SaveMacros" />
+
 </RelativeLayout>
