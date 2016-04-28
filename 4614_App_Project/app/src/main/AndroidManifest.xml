@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.charlie.a4614app">
+
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
@@ -29,6 +30,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MacroSettings"
+            android:label="@string/title_activity_macro_settings"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.charlie.a4614app.MainActivity" />
         </activity>
     </application>
 

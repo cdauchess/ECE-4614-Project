@@ -1,5 +1,6 @@
 package com.example.charlie.a4614app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -57,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "SMS faild, please try again.", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+    }
+
+    public void MacroSettings(View view){
+        Intent macro = new Intent(MainActivity.this, MacroSettings.class);
+        startActivity(macro);
     }
 
 }
