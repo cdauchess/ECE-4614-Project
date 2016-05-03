@@ -104,5 +104,5 @@
         android:id="@+id/MacroSettings"
         android:onClick="MacroSettings"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignEnd="@+id/EnterNum" />
 </RelativeLayout>

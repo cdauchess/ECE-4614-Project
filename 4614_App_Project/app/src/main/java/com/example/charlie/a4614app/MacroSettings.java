@@ -88,11 +88,6 @@ public class MacroSettings extends AppCompatActivity {
         editor.putString("TxtMacro3", TxtMacro3);
         editor.commit();
 
-        Intent intent = new Intent(MacroSettings.this, MainActivity.class);
-       //Pass values to the main activity
-        intent.putExtra("activity", "SaveMacros");
-        startActivity(intent);
-        Toast.makeText(getApplicationContext(), "Macro Settings Saved", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Macro Settings Saved", Toast.LENGTH_SHORT).show();
     }
-
 }
