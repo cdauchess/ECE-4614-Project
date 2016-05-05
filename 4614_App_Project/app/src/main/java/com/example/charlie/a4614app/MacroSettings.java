@@ -21,6 +21,9 @@ public class MacroSettings extends AppCompatActivity {
     EditText Text1;
     EditText Text2;
     EditText Text3;
+    EditText Num1;
+    EditText Num2;
+    EditText Num3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,11 @@ public class MacroSettings extends AppCompatActivity {
         String TxtMacro1 = Macros.getString("TxtMacro1", "");
         String TxtMacro2 = Macros.getString("TxtMacro2", "");
         String TxtMacro3 = Macros.getString("TxtMacro3", "");
+        String Numb1 = Macros.getString("Num1", "");
+        String Numb2 = Macros.getString("Num2", "");
+        String Numb3 = Macros.getString("Num3", "");
+
+
 
         SaveBtn = (Button) findViewById(R.id.SaveMacroBtn);
         Name1 = (EditText) findViewById(R.id.Macro1Name);
@@ -44,6 +52,11 @@ public class MacroSettings extends AppCompatActivity {
         Text1 = (EditText) findViewById(R.id.Macro1Txt);
         Text2 = (EditText) findViewById(R.id.Macro2Txt);
         Text3 = (EditText) findViewById(R.id.Macro3Txt);
+        Num1 = (EditText) findViewById(R.id.Number1);
+        Num2 = (EditText) findViewById(R.id.Number2);
+        Num3 = (EditText) findViewById(R.id.Number3);
+
+
 
 
         //Check if values exist, if they do set them to display.
@@ -65,6 +78,16 @@ public class MacroSettings extends AppCompatActivity {
         if(TxtMacro3 != ""){
             Text3.setText(TxtMacro3);
         }
+        if(Numb1 != ""){
+            Num1.setText(Numb1);
+        }
+        if(Numb2 != ""){
+            Num2.setText(Numb2);
+        }
+        if(Numb3 != ""){
+            Num3.setText(Numb3);
+        }
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -76,6 +99,9 @@ public class MacroSettings extends AppCompatActivity {
         String TxtMacro1 = Text1.getText().toString();
         String TxtMacro2 = Text2.getText().toString();
         String TxtMacro3 = Text3.getText().toString();
+        String Numb1 = Num1.getText().toString();
+        String Numb2 = Num2.getText().toString();
+        String Numb3 = Num3.getText().toString();
 
         SharedPreferences Macros = getSharedPreferences("Macros", MODE_PRIVATE);
         SharedPreferences.Editor editor = Macros.edit();
@@ -86,6 +112,9 @@ public class MacroSettings extends AppCompatActivity {
         editor.putString("TxtMacro1", TxtMacro1);
         editor.putString("TxtMacro2", TxtMacro2);
         editor.putString("TxtMacro3", TxtMacro3);
+        editor.putString("Num1", Numb1);
+        editor.putString("Num2", Numb2);
+        editor.putString("Num3", Numb3);
         editor.commit();
 
         Toast.makeText(getApplicationContext(), "Macro Settings Saved", Toast.LENGTH_SHORT).show();

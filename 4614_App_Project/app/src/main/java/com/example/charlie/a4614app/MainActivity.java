@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     String TxtMacro1 =  "Test1";
     String TxtMacro2 = "Test2";
     String TxtMacro3 = "Test3";
+    String Num1 = "1111111";
+    String Num2 = "1111111";
+    String Num3 = "1111111";
 
     String[] FailedMessage = new String[MaxFails];
     String[] FailedNumber = new String[MaxFails];
@@ -55,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
             TxtMacro1 = Macros.getString("TxtMacro1", "Not Set1");
             TxtMacro2 = Macros.getString("TxtMacro2", "Not Set2");
             TxtMacro3 = Macros.getString("TxtMacro3", "Not Set3");
+            Num1 = Macros.getString("Num1", "1111111");
+            Num2 = Macros.getString("Num2", "1111111");
+            Num3 = Macros.getString("Num3", "1111111");
+
+
             Macro1.setText(NameMacro1);
             Macro2.setText(NameMacro2);
             Macro3.setText(NameMacro3);
@@ -88,20 +96,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Macro1(View view){
-        MessageToSend.setText(TxtMacro1);
-        Send(view);
-
+        SendSMS(Num1,TxtMacro1);
     }
 
     public void Macro2(View view){
-        MessageToSend.setText(TxtMacro2);
-        Send(view);
+        SendSMS(Num2,TxtMacro2);
     }
 
     public void Macro3(View view){
-        MessageToSend.setText(TxtMacro3);
-        Send(view);
-
+        SendSMS(Num3,TxtMacro3);
     }
 
     public void SendFailedMessages(){

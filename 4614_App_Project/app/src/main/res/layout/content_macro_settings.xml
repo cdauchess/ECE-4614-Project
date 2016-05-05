@@ -19,10 +19,9 @@
         android:textSize="25dp"
         android:password="false"
         android:maxLength="15"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/Macro1Label"
         android:hint="Enter A Name"
-        android:layout_alignBaseline="@+id/Macro1Label" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Macro1Label" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,8 +54,8 @@
         android:password="false"
         android:maxLength="15"
         android:hint="Enter A Name"
-        android:layout_toEndOf="@+id/Macro2Label"
-        android:layout_alignBaseline="@+id/Macro2Label" />
+        android:layout_below="@+id/Macro2Label"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -66,9 +65,8 @@
         android:password="false"
         android:maxLength="15"
         android:hint="Enter A Name"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/Macro3Label"
-        android:layout_alignBaseline="@+id/Macro3Label" />
+        android:layout_below="@+id/Macro3Label"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Macro1Txt"
-        android:layout_below="@+id/Macro1Label"
+        android:layout_below="@+id/Macro1Name"
         android:layout_alignParentStart="true"
         android:hint="Enter Macro Text"
         android:textSize="25dp" />
@@ -97,8 +95,8 @@
         android:id="@+id/Macro2Txt"
         android:hint="Enter Macro Text"
         android:textSize="25dp"
-        android:layout_below="@+id/Macro2Label"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Macro2Name" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -106,7 +104,7 @@
         android:id="@+id/Macro3Txt"
         android:hint="Enter Macro Text"
         android:textSize="25dp"
-        android:layout_below="@+id/Macro3Label"
+        android:layout_below="@+id/Macro3Name"
         android:layout_alignParentStart="true" />
 
     <Button
@@ -117,5 +115,38 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:onClick="SaveMacros" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/Number1"
+        android:layout_toEndOf="@+id/Macro1Label"
+        android:layout_alignBaseline="@+id/Macro1Label"
+        android:layout_toRightOf="@+id/Macro1Label"
+        android:hint="Enter a Number"
+        android:textSize="25dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/Number2"
+        android:layout_alignStart="@+id/Number1"
+        android:layout_alignBaseline="@+id/Macro2Label"
+        android:layout_toRightOf="@+id/Macro2Label"
+        android:textSize="25dp"
+        android:hint="Enter a Number" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/Number3"
+        android:layout_alignStart="@+id/Number2"
+        android:layout_alignBaseline="@+id/Macro3Label"
+        android:layout_toRightOf="@+id/Macro3Label"
+        android:hint="Enter a Number"
+        android:textSize="25dp" />
 
 </RelativeLayout>
