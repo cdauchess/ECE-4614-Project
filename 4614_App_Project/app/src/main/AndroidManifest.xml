@@ -3,6 +3,7 @@
     package="com.example.charlie.a4614app">
 
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -40,6 +41,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.charlie.a4614app.MainActivity" />
         </activity>
+
+        <receiver android:name=".ConnectionReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

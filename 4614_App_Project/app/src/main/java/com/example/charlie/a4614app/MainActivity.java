@@ -32,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
     String Num1 = "1111111";
     String Num2 = "1111111";
     String Num3 = "1111111";
+    public static boolean IsConnected = true;
 
-    String[] FailedMessage = new String[MaxFails];
-    String[] FailedNumber = new String[MaxFails];
-    int FailCount = 0;
+    public static String[] FailedMessage = new String[MaxFails];
+    public static String[] FailedNumber = new String[MaxFails];
+    public static int FailCount = 0;
 
 
     @Override
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Intent connectionIntent = new Intent(this, ConnectionReceiver.class);
+        startService(connectionIntent);
+
 
         PhoneNum = (EditText) findViewById(R.id.EnterNum);
         MessageToSend = (EditText) findViewById(R.id.Message);
@@ -68,25 +72,30 @@ public class MainActivity extends AppCompatActivity {
             Macro3.setText(NameMacro3);
     }
     public void Send(View view) { //Respond to press of the Send Button
-        String phoneNo = PhoneNum.getText().toString();
-        String message = MessageToSend.getText().toString();
-        SendSMS(phoneNo, message);
+            String phoneNo = PhoneNum.getText().toString();
+            String message = MessageToSend.getText().toString();
+            SendSMS(phoneNo, message);
+
+
     }
     public void SendSMS(String Num, String Message){
         Log.i("Send SMS", "");
-        try {
-            SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(Num, null, Message, null, null);
-            Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_SHORT).show();
+        if(IsConnected == true) {
+            try {
+                SmsManager smsManager = SmsManager.getDefault();
+                smsManager.sendTextMessage(Num, null, Message, null, null);
+                Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), "Input a message and number", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
         }
-
-        catch (Exception e) {
+        else{
             //Deal with storing messages here
             FailedMessage[FailCount] = Message;
             FailedNumber[FailCount] = Num;
             FailCount++;
             Toast.makeText(getApplicationContext(), "SMS failed, will send when connection is available", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
         }
     }
 
